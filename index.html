@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css.css">
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="table">
+            <div>
+                <h5>Название</h5>
+                <ul>
+                    <ol v-for="product in products" :key="product.name">
+                        {{product.name}}
+                    </ol>
+                </ul>
+            </div>
+            <div>
+                <h5>Цена</h5>
+                <ul>
+                    <ol v-for="product in products" :key="product.price">
+                        {{product.price}}
+                    </ol>
+                </ul>
+            </div>
+            <div>
+                <h5>Кол-во</h5>
+                <ul>
+                    <ol v-for="product in products" :key="product.quantity">
+                        {{product.quantity}}
+                    </ol>
+                </ul>
+            </div>
+            <div>
+                <h5>Общая стоимость</h5>
+                <ul>
+                    <ol v-for="product in products" :key="product.total">
+                        {{product.total}}
+                    </ol>
+                </ul>
+            </div>
+            <div>
+                <button @click="deleted" v-bind:style="{marginTop: value1}">Удалить</button>
+            </div>
+        </div>
+        <div>
+            <p>Общая стоимость {{sum}}</p>
+        </div>
+
+        <div>
+            <input type="text" placeholder="Введите название" v-model="name">
+            <input type="text" placeholder="Введите цену" v-model="price">
+            <input type="text" placeholder="Введите кол-во" v-model="quantity">
+        </div>
+        <div>
+            <button @click="plus" > Расчитать стоимость</button>
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
